@@ -74,12 +74,44 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": "LTX 2.5 AI video generator preview",
-        "description": "A visual preview used on the LTX 2.5 landing page to help users evaluate the style and positioning of the product before opening the official site.",
-        "thumbnailUrl": "https://www.ltx25.org/og-home.jpg",
-        "uploadDate": "2026-04-25",
-        "contentUrl": "https://www.ltx25.org/og-home.jpg"
+        "@graph": [
+          {
+            "@type": "VideoObject",
+            "name": "LTX 2.5 cinematic product reveal example",
+            "description": "Short LTX 2.5 style demo clip used on the landing page to help users inspect motion, pacing, and commercial fit before opening the official tool.",
+            "thumbnailUrl": "https://www.ltx25.org/og-home.jpg",
+            "uploadDate": "2026-04-25",
+            "contentUrl": "https://aitools12.github.io/ltx25/videos/ltx25-demo-1.mp4",
+            "embedUrl": "https://aitools12.github.io/ltx25/#videos"
+          },
+          {
+            "@type": "VideoObject",
+            "name": "LTX 2.5 motion control example",
+            "description": "Public autoplay sample clip used to demonstrate how LTX 2.5 style motion previews can be evaluated on the landing page.",
+            "thumbnailUrl": "https://www.ltx25.org/og-home.jpg",
+            "uploadDate": "2026-04-25",
+            "contentUrl": "https://aitools12.github.io/ltx25/videos/ltx25-demo-2.mp4",
+            "embedUrl": "https://aitools12.github.io/ltx25/#videos"
+          },
+          {
+            "@type": "VideoObject",
+            "name": "LTX 2.5 portrait scene example",
+            "description": "Short portrait-led demo video used to show the kind of framing and pacing users can inspect before generating on the official LTX 2.5 website.",
+            "thumbnailUrl": "https://www.ltx25.org/og-home.jpg",
+            "uploadDate": "2026-04-25",
+            "contentUrl": "https://aitools12.github.io/ltx25/videos/ltx25-demo-3.mp4",
+            "embedUrl": "https://aitools12.github.io/ltx25/#videos"
+          },
+          {
+            "@type": "VideoObject",
+            "name": "LTX 2.5 creative ad example",
+            "description": "Autoplay creative sample used on the LTX 2.5 gallery section so search engines and users can both detect actual video content on the page.",
+            "thumbnailUrl": "https://www.ltx25.org/og-home.jpg",
+            "uploadDate": "2026-04-25",
+            "contentUrl": "https://aitools12.github.io/ltx25/videos/ltx25-demo-4.mp4",
+            "embedUrl": "https://aitools12.github.io/ltx25/#videos"
+          }
+        ]
       }
     </script>
   </head>
@@ -93,6 +125,7 @@
           <span>LTX 2.5</span>
         </a>
         <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#videos">Videos</a>
           <a href="#overview">Overview</a>
           <a href="#features">Features</a>
           <a href="#comparison">Comparison</a>
@@ -121,35 +154,91 @@
               <a class="ghost" href="https://www.ltx25.org/pricing" target="_blank" rel="noopener noreferrer">Review Pricing</a>
             </div>
           </div>
-
-          <aside class="hero-panel" aria-label="LTX 2.5 prompt workspace">
+        </div>
+        <div class="shell">
+          <aside class="hero-panel hero-prompt-panel" aria-label="LTX 2.5 prompt workspace">
             <div class="panel-top">
               <span class="panel-pill">Prompt Workspace</span>
-              <strong>LTX 2.5 model brief</strong>
+              <strong>Use an input-led hero that routes visitors back to the official generator</strong>
             </div>
-            <div class="prompt-box">
-              <label class="prompt-label" for="ltx25-prompt">
-                Describe your scene, motion, lighting, and camera. Use this page to explore LTX 2.5 prompts,
-                access intent, and creator workflow checks.
+            <div class="prompt-box prompt-box-light">
+              <label class="prompt-label prompt-label-dark" for="ltx25-prompt">
+                Describe your scene, motion, lighting, and camera. Use this page to explore LTX 2.5 prompts, access
+                intent, and comparison paths.
               </label>
-              <textarea id="ltx25-prompt" aria-label="LTX 2.5 example prompt">A cinematic product reveal in a rain-washed night street, smooth dolly motion, reflective pavement, controlled teal highlights, premium brand pacing, crisp subject lock, realistic atmosphere.</textarea>
+              <textarea
+                id="ltx25-prompt"
+                aria-label="LTX 2.5 example prompt"
+                placeholder="A premium product launch scene with controlled camera motion, reflective surfaces, soft blue-green highlights, confident pacing, and clean subject focus."
+              >A premium wearable device rotates slowly above a glass pedestal, soft teal rim lighting, shallow depth of field, controlled cinematic push-in, polished reflections, short ad pacing, realistic product texture.</textarea>
             </div>
             <div class="metric-grid">
               <article><span>Model</span><strong>LTX 2.5</strong></article>
-              <article><span>Mode</span><strong>Text / Image</strong></article>
-              <article><span>Format</span><strong>16:9 · 9:16</strong></article>
-              <article><span>Output</span><strong>Short clips</strong></article>
-              <article><span>Goal</span><strong>Fast testing</strong></article>
-              <article><span>Fit</span><strong>Ads · Social</strong></article>
+              <article><span>Quality</span><strong>Pro flow</strong></article>
+              <article><span>Ratio</span><strong>16:9</strong></article>
+              <article><span>Duration</span><strong>5s</strong></article>
+              <article><span>Style</span><strong>Balanced</strong></article>
+              <article><span>Audio</span><strong>Optional</strong></article>
             </div>
             <div class="chip-row">
               <span>Try</span>
+              <a href="https://www.ltx25.org" target="_blank" rel="noopener noreferrer">Cinematic stable</a>
+              <a href="https://www.ltx25.org" target="_blank" rel="noopener noreferrer">Golden-hour motion</a>
               <a href="https://www.ltx25.org" target="_blank" rel="noopener noreferrer">Product reveal</a>
-              <a href="https://www.ltx25.org" target="_blank" rel="noopener noreferrer">Lifestyle scene</a>
-              <a href="https://www.ltx25.org" target="_blank" rel="noopener noreferrer">Cinematic ad</a>
               <a class="launch-button" href="https://www.ltx25.org" target="_blank" rel="noopener noreferrer" aria-label="Generate with LTX 2.5">↗</a>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section class="video-gallery" id="videos">
+        <div class="shell">
+          <div class="section-heading section-heading-center">
+            <p class="section-kicker">Video gallery</p>
+            <h2>LTX 2.5 AI video examples users can preview before clicking through</h2>
+            <p>
+              This autoplay gallery exists for both users and search engines: it gives real motion previews on-page,
+              keeps the page visibly video-first, and makes the landing page more legible for video-related indexing.
+            </p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card">
+              <video autoplay muted loop playsinline controls preload="metadata" poster="https://www.ltx25.org/og-home.jpg">
+                <source src="./videos/ltx25-demo-1.mp4" type="video/mp4" />
+              </video>
+              <div>
+                <h3>Cinematic product reveal</h3>
+                <p>Use this type of preview to judge whether LTX 2.5 can support premium ad pacing and clean object motion.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video autoplay muted loop playsinline controls preload="metadata" poster="https://www.ltx25.org/og-home.jpg">
+                <source src="./videos/ltx25-demo-2.mp4" type="video/mp4" />
+              </video>
+              <div>
+                <h3>Motion control sample</h3>
+                <p>Helpful for checking whether camera movement and visual rhythm look deliberate rather than random.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video autoplay muted loop playsinline controls preload="metadata" poster="https://www.ltx25.org/og-home.jpg">
+                <source src="./videos/ltx25-demo-3.mp4" type="video/mp4" />
+              </video>
+              <div>
+                <h3>Portrait scene test</h3>
+                <p>Use portrait-led examples to evaluate framing stability, facial consistency, and short-form composition.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video autoplay muted loop playsinline controls preload="metadata" poster="https://www.ltx25.org/og-home.jpg">
+                <source src="./videos/ltx25-demo-4.mp4" type="video/mp4" />
+              </video>
+              <div>
+                <h3>Creative ad draft</h3>
+                <p>Good for fast checks on visual hook strength, lighting character, and whether the result feels campaign-ready.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
