@@ -143,6 +143,7 @@ a {
 }
 
 .hero,
+.video-gallery,
 .glance,
 .overview-block,
 .search-reasons,
@@ -158,8 +159,8 @@ a {
 
 .hero-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
-  gap: 22px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -171,6 +172,7 @@ a {
 .step-grid article,
 .comparison-table,
 .prompt-grid article,
+.video-card,
 .link-grid a,
 .faq-list article,
 .cta-shell {
@@ -205,6 +207,37 @@ a {
 .cta-shell,
 .comparison-table {
   padding: 30px;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(17, 32, 51, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 32, 51, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent);
+  pointer-events: none;
+}
+
+.hero-copy {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 34px 24px 8px;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.hero-copy::before {
+  display: none;
 }
 
 .eyebrow,
@@ -276,6 +309,7 @@ h3 {
 }
 
 .hero-actions {
+  justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 26px;
@@ -286,6 +320,7 @@ h3 {
   z-index: 1;
   display: grid;
   gap: 12px;
+  text-align: left;
 }
 
 .panel-top strong {
@@ -310,6 +345,23 @@ h3 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+.hero-prompt-panel {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.hero-prompt-panel::before {
+  background:
+    radial-gradient(circle at top right, rgba(23, 125, 220, 0.08), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(25, 182, 154, 0.09), transparent 30%);
+}
+
+.prompt-box-light {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  box-shadow: none;
+}
+
 .prompt-label {
   display: block;
   margin-bottom: 12px;
@@ -319,9 +371,15 @@ h3 {
   font-weight: 600;
 }
 
+.prompt-label-dark {
+  color: #7d726c;
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.7;
+}
+
 .prompt-box textarea {
   width: 100%;
-  min-height: 96px;
+  min-height: 160px;
   resize: vertical;
   border: 1px solid rgba(223, 247, 255, 0.12);
   border-radius: 18px;
@@ -333,8 +391,21 @@ h3 {
   outline: none;
 }
 
+.prompt-box-light textarea {
+  border-color: rgba(17, 32, 51, 0.08);
+  background: #fff;
+  color: var(--ink);
+  min-height: 140px;
+  padding: 18px 20px;
+  box-shadow: inset 0 1px 0 rgba(17, 32, 51, 0.04);
+}
+
 .prompt-box textarea::placeholder {
   color: rgba(223, 247, 255, 0.48);
+}
+
+.prompt-box-light textarea::placeholder {
+  color: #9b8e87;
 }
 
 .prompt-box textarea:focus {
@@ -420,11 +491,18 @@ h3 {
   margin-bottom: 22px;
 }
 
+.section-heading-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .glance-grid,
 .reason-grid,
 .feature-grid,
 .step-grid,
 .prompt-grid,
+.video-grid,
 .link-grid,
 .faq-list {
   display: grid;
@@ -440,6 +518,11 @@ h3 {
 
 .prompt-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.video-grid {
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
 }
 
 .faq-list {
@@ -461,8 +544,32 @@ h3 {
 .feature-grid article,
 .step-grid article,
 .faq-list article,
-.prompt-grid article {
+.prompt-grid article,
+.video-card {
   padding: 24px;
+}
+
+.video-card {
+  overflow: hidden;
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 24px;
+  background: #08111b;
+}
+
+.video-card div {
+  padding-top: 16px;
+}
+
+.video-card p {
+  color: var(--muted);
+  line-height: 1.72;
+  margin-bottom: 0;
 }
 
 .reason-grid span,
@@ -555,6 +662,7 @@ h3 {
   .feature-grid,
   .step-grid,
   .prompt-grid,
+  .video-grid,
   .link-grid,
   .faq-list {
     grid-template-columns: 1fr 1fr;
@@ -607,14 +715,27 @@ h3 {
   .feature-grid,
   .step-grid,
   .prompt-grid,
+  .video-grid,
   .link-grid,
   .faq-list,
   .metric-grid {
     grid-template-columns: 1fr;
   }
 
+  .hero-copy {
+    padding: 18px 8px 6px;
+  }
+
   .chip-row .launch-button {
     margin-left: 0;
+  }
+
+  .hero-prompt-panel {
+    padding: 22px;
+  }
+
+  .prompt-box-light textarea {
+    min-height: 108px;
   }
 
   h1 {
